@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static%}
+{% block content %}
+        <div class="detail">
+            <div class="title" id="me">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>A little bit about me</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <summary>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                        velit...""There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                        because it is pain..."
+                    </summary>
+                </div>
+            </div>
+        </div>
+        <div id="edu"></div>
+        <div class="education">
+            <div class="title">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Education</p>
+                    </div>
+                </div>
+            </div>
+            <div class="schools">
+                <div class="row">
+                    <div class="col-md-3" style="background-color: blue">
+                        <h3>UC Santa Barbara</h3>
+                    </div>
+                    <div class="col-md-3" style="background-color: yellow">
+                        <h3>Kickstart Coding</h3>
+                    </div>
+                    <div class="col-md-3" style="background-color: green">
+                        <h3>Laney City College</h3>
+                    </div>
+                    <div class="col-md-3" style="background-color: orange">
+                        <h3>Berkeley City College</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projects" id="pro">
+            <div class="project1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img id="projimg" src="{% static "imgs/greenGrass.jpg" %}">
+                    </div>
+                    <div class="col-md-8">
+                        <p id="projp">"Neque porro quisquam est qui dolorem ipsum quia<br> dolor sit amet,consectetur, <br>
+                            adipisci velit...""There is no one who loves pain itself,<br> who seeks after it and wants to have
+                            it,<br> simply because it is pain..."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img id="projimg" src="{% static "imgs/s.jpg" %}">
+                    </div>
+                    <div class="col-md-8">
+                        <p id="projp">"Neque porro quisquam est qui dolorem ipsum quia<br> dolor sit amet,consectetur, <br>
+                            adipisci velit...""There is no one who loves pain itself,<br> who seeks after it and wants to have
+                            it,<br> simply because it is pain..."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{%endblock%}

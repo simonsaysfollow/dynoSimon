@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<form id="email_form" action="" method="POST" style="text-align:center">
+    {% csrf_token %}
+    <fieldset>
+    <div>
+        <label for="Fname">First:</label>
+        <input type="text" id="Fname" name="user_first">
+        <label for="Lname">Last:</label>
+        <input type="text" id="Lname" name="user_last">
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail">
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="phonenumber" id="phonecall" name="phone_number">
+    </div>
+    <div>
+        <label for="company">Company:</label>
+        <input type ="text" id="company_name" name="company_name">
+    </div>
+    <div>
+        <textarea id="msg" name="user_message" placeholder = "message" style="width:300px;height:150px;"></textarea>
+    </div>
+    <div>
+        <button name="submit">Submit</button>
+    </div>
+    </fieldset>
+</form>
+{% endblock %}

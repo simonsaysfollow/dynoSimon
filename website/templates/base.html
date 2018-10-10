@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+       <!--  bootstrap link  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+        <!-- font links -->
+        <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+
+        <!-- This is the main css used for the base -->
+
+    
+        <link rel="stylesheet" href="{% static "styling/css_base.css" %}">
+
+        <link rel="stylesheet" href="{% static "styling/css_index.css" %}">
+
+        <link rel="stylesheet" href="{% static "styling/css_map.css" %}">
+       
+        
+        <!-- <script type="text/javascript" src="styling/javascript/maps.js"></script> -->
+        <!--This is for generated css links-->
+            {{add_links}} 
+
+        <title>{{title|title}}</title>
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <img src="{% static "imgs/headshot.jpg"%}" style="border-radius:50%; height:150px; width:150px"/>
+                <div class="col-md-8">
+                    <h1>Simon Tekeste</h1>
+                    <h3>Bay Area, California</h3>
+                    <div class="tags">
+                        {% for x in y %}
+                            {% if checker == x %}
+                                <strong><a href="{{x}}">{{x.title|title}}</a></strong>
+                            {% else %}
+                                <a href="{{x}}">{{x.title|title}}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="pagefinder">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <a href="#me"><button id="btn" style="background-color: red">About me</button></a> 
+                            </div>
+                            <div class="row">
+                                <a href="#edu"><button id="btn" style="background-color: lightblue">Education</button></a>
+                            </div>
+                             <div class="row">
+                                 <a href="#pro"><button id="btn" style="background-color: yellow">Projects</button></a>
+                            </div>
+                             <div class="row">
+                                <a href="mailto:st.tekeste@gmail.com"><button id="btn" style="background-color: green">Email me</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       {{content_insert|safe}}
+       {%block content%}
+       {%endblock%}
+        <footer>
+            <div class="row">
+                <div class="col-md-12"> 
+                    <p>Thank you for viewing my page</p>
+                    <a href="../idk.py" download="idk">Resume</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="links">
+                        <a href="https://www.linkedin.com/feed/"><img src = "{% static "imgs/linkedin.png" %}" style="width:50px;height:50px;margin-right: 90px;" title = "Linkedin"></a>
+                        <a href="https://github.com/simonsaysfollow"><img src = "{% static "imgs/github.png" %}" style="width:50px;height:50px;margin-left: 90px;" ></a> 
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
