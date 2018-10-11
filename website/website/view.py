@@ -1,4 +1,4 @@
-import request
+import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 import templates
@@ -16,11 +16,9 @@ for single in all_html_files:
 
 
 def index(request):
-    # home = open("content/home.html").read()
     context = {
         'title': 'Simon Tekeste',
         "y": holder,
-        # "content_insert": home,
         "checker":"home"
             }
     return render(request, 'home.html', context)
@@ -28,17 +26,14 @@ def index(request):
 
 def second(request):
 
-    # content = open("content/travel.html").read()
     context = {
         "title": "Projects",
         "y": holder,
-        # "content_insert": content,
         "checker":"travel"
     }
     return render(request, "travel.html", context)
 
 def connect_with_me(request):
-    # contact = open("templates/contact.html").read()
     
     if request.method == "POST":
 
@@ -49,13 +44,11 @@ def connect_with_me(request):
         phone = request.POST["phone_number"]
         company = request.POST["company_name"]
         
-
     else:
     
         context = {
             "title": "Contact Me",
             "y": holder,
-            # "content_insert": contact,
             "checker": "contact"
 
         }
